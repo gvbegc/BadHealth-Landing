@@ -163,16 +163,28 @@
         @media (min-width: 1024px) {
             .container {
                 flex-direction: row;
-                flex-wrap: wrap;
                 align-items: center;
-                justify-content: space-between;
                 padding: 2rem 4rem;
+                gap: 2rem;
             }
 
-            .heading {
-                order: 1;
-                width: 50%;
+            .phone-section {
+                flex: 1;
+                order: 2;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .phone-image {
+                width: 300px;
+            }
+
+            /* Left content section */
+            .heading, .subtitle, .klaviyo-form-section, .club-section {
+                width: 100%;
                 max-width: 600px;
+                margin-left: 0;
             }
 
             .main-title {
@@ -180,44 +192,22 @@
                 min-height: 2em;
             }
 
-            .phone-section {
-                order: 2;
-                width: 40%;
-                margin: 0;
-            }
-
-            .phone-image {
-                width: 300px;
-            }
-
             .subtitle {
-                order: 3;
                 font-size: 1.4rem;
-                width: 50%;
-            }
-
-            .klaviyo-form-section {
-                order: 4;
-                width: 50%;
-                max-width: 600px;
-            }
-
-            .club-section {
-                order: 5;
-                width: 50%;
-                max-width: 600px;
             }
 
             .club-title {
                 font-size: 2.5rem;
             }
 
-            .club-description {
+            .club-description, .beta-text {
                 font-size: 1.4rem;
             }
 
-            .beta-text {
-                font-size: 1.4rem;
+            /* Create a wrapper for left content */
+            .heading, .subtitle, .klaviyo-form-section, .club-section {
+                order: 1;
+                flex: 0 1 600px;
             }
         }
     </style>
