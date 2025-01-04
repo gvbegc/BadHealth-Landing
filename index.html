@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XjK9Zj'></script>
     <style>
+        /* --------------------------------
+           BASE & MOBILE-PRIMARY STYLES
+        --------------------------------- */
         * {
             margin: 0;
             padding: 0;
@@ -36,13 +39,13 @@
 
         .heading {
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .main-title {
             font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
+            margin-bottom: 0.65rem;
             min-height: 3em;
             text-align: left;
             color: #223c36;
@@ -58,7 +61,7 @@
             animation-delay: 3.2s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .phone-section {
@@ -68,7 +71,7 @@
         }
 
         .phone-image {
-            width: 146px;  /* Reduced by 10% from 162px */
+            width: 146px;  
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -86,7 +89,7 @@
             color: #666;
             margin-bottom: 1rem;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .klaviyo-form-section {
@@ -105,7 +108,7 @@
             animation-delay: 4s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .club-title {
@@ -141,6 +144,9 @@
             animation: blink 1s infinite;
         }
 
+        /* --------------------------------
+           MOBILE-ONLY (max-width: 768px)
+        --------------------------------- */
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -155,7 +161,45 @@
             }
 
             .phone-image {
-                width: 144px;  /* Adjusted for mobile */
+                width: 144px;
+            }
+        }
+
+        /* --------------------------------
+           NEW DESKTOP-OPTIMIZED STYLES
+           (min-width: 769px)
+        --------------------------------- */
+        @media (min-width: 769px) {
+            /* Give container a more "horizontal" layout for desktop */
+            .container {
+                flex-direction: row;
+                align-items: flex-start; 
+                justify-content: space-between;
+            }
+
+            .heading {
+                max-width: 450px;
+            }
+
+            .phone-section {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .phone-image {
+                width: 180px;  /* Slightly bigger on desktop */
+            }
+
+            /* Keep form and club section in a neat column on the right side */
+            .klaviyo-form-section,
+            .club-section {
+                max-width: 450px;
+            }
+
+            /* Optional: spacing adjustments for desktop aesthetics */
+            .beta-text {
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
@@ -195,7 +239,7 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    // Vary the typing speed slightly for more natural effect
+                    // Vary the typing speed slightly for a more natural effect
                     const randomDelay = Math.random() * 20 + 30; // 30-50ms
                     setTimeout(addCharacter, randomDelay);
                 } else {
