@@ -23,7 +23,6 @@
             min-height: 100vh;
         }
 
-        /* Base/Mobile styles (unchanged from original) */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -37,13 +36,13 @@
 
         .heading {
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .main-title {
             font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
             min-height: 3em;
             text-align: left;
             color: #223c36;
@@ -59,7 +58,7 @@
             animation-delay: 3.2s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .phone-section {
@@ -69,7 +68,7 @@
         }
 
         .phone-image {
-            width: 146px;
+            width: 146px;  /* Reduced by 10% from 162px */
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -87,7 +86,7 @@
             color: #666;
             margin-bottom: 1rem;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .klaviyo-form-section {
@@ -106,7 +105,7 @@
             animation-delay: 4s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .club-title {
@@ -142,83 +141,27 @@
             animation: blink 1s infinite;
         }
 
-        /* Desktop styles */
-        @media (min-width: 769px) {
+        @media (max-width: 768px) {
             .container {
-                flex-direction: row;
-                align-items: center;
-                gap: 4rem;
-                padding: 2rem 4rem;
-            }
-
-            /* Only create two columns on desktop */
-            .desktop-layout {
-                display: flex;
-                gap: 4rem;
-                align-items: center;
-            }
-
-            .content-left {
-                flex: 1;
-                max-width: 600px;
-            }
-
-            .content-right {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .heading {
-                max-width: 100%;
+                padding: 2rem 1rem;
             }
 
             .main-title {
-                font-size: 2.5rem;
-                min-height: 2em;
+                font-size: 1.55rem;
             }
 
             .subtitle {
-                font-size: 1.4rem;
-                max-width: 100%;
+                font-size: 1.25rem;
             }
 
             .phone-image {
-                width: 220px;
-            }
-
-            .klaviyo-form-section {
-                max-width: 100%;
-            }
-
-            .club-section {
-                max-width: 100%;
-            }
-
-            .club-title {
-                font-size: 2.5rem;
-            }
-
-            .club-description {
-                font-size: 1.4rem;
-            }
-
-            .beta-text {
-                font-size: 1.4rem;
-                max-width: 100%;
-            }
-
-            /* Move phone section to the right on desktop */
-            .phone-section {
-                order: 2;
+                width: 144px;  /* Adjusted for mobile */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Mobile layout (default) -->
         <div class="heading">
             <h1 class="main-title" id="mainTitle"></h1>
         </div>
@@ -229,6 +172,7 @@
 
         <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
         
+        <!-- Klaviyo form section -->
         <div class="klaviyo-form-section">
             <div class="klaviyo-form-SbT2qD"></div>
         </div>
@@ -251,9 +195,11 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    const randomDelay = Math.random() * 20 + 30;
+                    // Vary the typing speed slightly for more natural effect
+                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
                     setTimeout(addCharacter, randomDelay);
                 } else {
+                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
@@ -262,40 +208,10 @@
             addCharacter();
         }
 
+        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
-        });
-
-        // Add desktop layout if screen is wide enough
-        function handleDesktopLayout() {
-            if (window.innerWidth >= 769) {
-                const container = document.querySelector('.container');
-                const phoneSection = document.querySelector('.phone-section');
-                const contentElements = Array.from(container.children).filter(el => el !== phoneSection);
-                
-                // Create desktop layout
-                const desktopLayout = document.createElement('div');
-                desktopLayout.className = 'desktop-layout';
-                
-                const contentLeft = document.createElement('div');
-                contentLeft.className = 'content-left';
-                contentElements.forEach(el => contentLeft.appendChild(el));
-                
-                const contentRight = document.createElement('div');
-                contentRight.className = 'content-right';
-                contentRight.appendChild(phoneSection);
-                
-                desktopLayout.appendChild(contentLeft);
-                desktopLayout.appendChild(contentRight);
-                container.appendChild(desktopLayout);
-            }
-        }
-
-        // Handle desktop layout on load and resize
-        window.addEventListener('load', handleDesktopLayout);
-        window.addEventListener('resize', () => {
-            location.reload(); // Reload page on resize to reset layout
         });
     </script>
 </body>
