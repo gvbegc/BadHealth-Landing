@@ -27,7 +27,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 4rem 2rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -38,7 +38,6 @@
 
         .content-wrapper {
             width: 100%;
-            max-width: 600px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -46,12 +45,12 @@
 
         .heading {
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
             padding: 0 4px;
         }
 
         .main-title {
-            font-size: clamp(1.55rem, 4vw, 2.5rem);
+            font-size: 1.55rem;
             font-weight: 700;
             margin-bottom: 0.65rem;
             min-height: 3em;
@@ -60,7 +59,7 @@
         }
 
         .subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-size: 1.1rem;
             color: #666;
             margin-bottom: 0;
             opacity: 0;
@@ -69,7 +68,7 @@
             animation-delay: 3.2s;
             text-align: left;
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
             padding: 0 4px;
         }
 
@@ -81,7 +80,7 @@
         }
 
         .phone-image {
-            width: clamp(146px, 20vw, 200px);
+            width: 146px;
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -90,7 +89,7 @@
         }
 
         .beta-text {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-size: 1.25rem;
             opacity: 0;
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
@@ -99,7 +98,7 @@
             color: #666;
             margin-bottom: 1rem;
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
             padding: 0 4px;
         }
 
@@ -109,8 +108,8 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.5s;
             width: 100%;
-            max-width: 600px;
-            margin-top: 0.1rem;
+            max-width: 400px;
+            margin-top: 0.15rem;
         }
 
         .club-section {
@@ -120,18 +119,18 @@
             animation-delay: 4s;
             text-align: left;
             width: 100%;
-            max-width: 600px;
+            max-width: 400px;
             padding: 0 4px;
         }
 
         .club-title {
-            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-size: 2rem;
             margin-bottom: 0.7rem;
             color: #223c36;
         }
 
         .club-description {
-            font-size: clamp(1.25rem, 3vw, 1.4rem);
+            font-size: 1.25rem;
             color: #666;
         }
 
@@ -157,17 +156,49 @@
             animation: blink 1s infinite;
         }
 
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .content-wrapper {
+                max-width: 600px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .phone-image {
+                width: 180px;
+            }
+
+            .club-title {
+                font-size: 2.3rem;
+            }
+
+            .club-description {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Mobile styles - preserving original exact ratios */
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
             }
-            
-            .content-wrapper {
-                max-width: 400px;
+
+            .main-title {
+                font-size: 1.55rem;
             }
 
-            .heading, .subtitle, .beta-text, .klaviyo-form-section, .club-section {
-                max-width: 400px;
+            .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .phone-image {
+                width: 144px;
             }
         }
     </style>
