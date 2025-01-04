@@ -158,91 +158,29 @@
                 width: 144px;  /* Adjusted for mobile */
             }
         }
-
-        /* Desktop Layout */
-        @media (min-width: 1024px) {
-            .container {
-                flex-direction: row;
-                align-items: center;
-                gap: 2rem;
-                padding: 2rem 4rem;
-            }
-
-            .left-content {
-                flex: 1;
-                max-width: 600px;
-                order: 1;
-            }
-
-            .phone-section {
-                flex: 1;
-                order: 2;
-                margin: 0;
-            }
-
-            .heading {
-                max-width: 100%;
-            }
-
-            .main-title {
-                font-size: 2.5rem;
-                min-height: 2em;
-            }
-
-            .subtitle {
-                font-size: 1.4rem;
-                max-width: 100%;
-            }
-
-            .phone-image {
-                width: 300px;
-            }
-
-            .klaviyo-form-section {
-                max-width: 100%;
-            }
-
-            .club-section {
-                max-width: 100%;
-            }
-
-            .club-title {
-                font-size: 2.5rem;
-            }
-
-            .club-description {
-                font-size: 1.4rem;
-            }
-
-            .beta-text {
-                font-size: 1.4rem;
-                max-width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="left-content">
-            <div class="heading">
-                <h1 class="main-title" id="mainTitle"></h1>
-            </div>
-
-            <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
-            
-            <div class="klaviyo-form-section">
-                <div class="klaviyo-form-SbT2qD"></div>
-            </div>
-            
-            <div class="club-section">
-                <h2 class="club-title">The 1,000 club</h2>
-                <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
-                <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
-            </div>
+        <div class="heading">
+            <h1 class="main-title" id="mainTitle"></h1>
         </div>
         
         <div class="phone-section">
             <img src="images/BHPhoneView.png" alt="BadHealth App Interface" class="phone-image">
+        </div>
+
+        <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
+        
+        <!-- Klaviyo form section -->
+        <div class="klaviyo-form-section">
+            <div class="klaviyo-form-SbT2qD"></div>
+        </div>
+        
+        <div class="club-section">
+            <h2 class="club-title">The 1,000 club</h2>
+            <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
+            <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
         </div>
     </div>
 
@@ -270,6 +208,7 @@
             addCharacter();
         }
 
+        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
