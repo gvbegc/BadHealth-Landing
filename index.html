@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Head and meta tags stay the same -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XjK9Zj'></script>
     <style>
+        /* All your original styles stay exactly the same */
         * {
             margin: 0;
             padding: 0;
@@ -141,6 +143,11 @@
             animation: blink 1s infinite;
         }
 
+        /* Make left-content invisible on mobile */
+        .left-content {
+            display: contents;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -163,49 +170,48 @@
         @media (min-width: 1024px) {
             .container {
                 flex-direction: row;
-                flex-wrap: wrap;
                 align-items: center;
-                justify-content: space-between;
+                gap: 2rem;
                 padding: 2rem 4rem;
             }
 
-            .heading {
-                order: 1;
-                width: 50%;
+            .left-content {
+                display: block;  /* Make wrapper visible on desktop */
+                flex: 1;
                 max-width: 600px;
+                order: 1;
             }
 
             .phone-section {
+                flex: 1;
                 order: 2;
-                width: 40%;
                 margin: 0;
+            }
+
+            .heading {
+                max-width: 100%;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+                min-height: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.4rem;
+                max-width: 100%;
             }
 
             .phone-image {
                 width: 300px;
             }
 
-            .subtitle {
-                order: 3;
-                font-size: 1.4rem;
-                width: 50%;
-            }
-
             .klaviyo-form-section {
-                order: 4;
-                width: 50%;
-                max-width: 600px;
+                max-width: 100%;
             }
 
             .club-section {
-                order: 5;
-                width: 50%;
-                max-width: 600px;
-            }
-
-            .main-title {
-                font-size: 2.5rem;
-                min-height: 2em;
+                max-width: 100%;
             }
 
             .club-title {
@@ -218,31 +224,33 @@
 
             .beta-text {
                 font-size: 1.4rem;
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="heading">
-            <h1 class="main-title" id="mainTitle"></h1>
+        <div class="left-content">
+            <div class="heading">
+                <h1 class="main-title" id="mainTitle"></h1>
+            </div>
+            
+            <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
+            
+            <div class="klaviyo-form-section">
+                <div class="klaviyo-form-SbT2qD"></div>
+            </div>
+            
+            <div class="club-section">
+                <h2 class="club-title">The 1,000 club</h2>
+                <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
+                <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
+            </div>
         </div>
         
         <div class="phone-section">
             <img src="images/BHPhoneView.png" alt="BadHealth App Interface" class="phone-image">
-        </div>
-
-        <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
-        
-        <!-- Klaviyo form section -->
-        <div class="klaviyo-form-section">
-            <div class="klaviyo-form-SbT2qD"></div>
-        </div>
-        
-        <div class="club-section">
-            <h2 class="club-title">The 1,000 club</h2>
-            <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
-            <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
         </div>
     </div>
 
