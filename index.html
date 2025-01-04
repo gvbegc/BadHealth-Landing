@@ -31,31 +31,34 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 1rem;  /* Reduced from 2rem */
+            gap: 1rem;
+            align-items: center;
         }
 
         .heading {
-            max-width: 600px;
+            max-width: 400px;
         }
 
         .main-title {
-            font-size: 1.75rem;
+            font-size: 1.225rem; /* Reduced by 30% from 1.75rem */
             font-weight: 700;
-            margin-bottom: 0.75rem;  /* Reduced from 1.5rem */
+            margin-bottom: 0.75rem;
             min-height: 3em;
             text-align: left;
             color: #223c36;
+            max-width: 400px;
         }
 
         .subtitle {
             font-size: 1.1rem;
             color: #666;
-            margin-bottom: 0.35rem;  /* Reduced from 0.7rem */
+            margin-bottom: 0.35rem;
             opacity: 0;
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.2s;
             text-align: left;
+            max-width: 400px;
         }
 
         .phone-section {
@@ -65,21 +68,12 @@
         }
 
         .phone-image {
-            width: 191px;
+            width: 162px; /* Reduced by 15% from 191px */
             height: auto;
             opacity: 0;
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 2.5s;
-        }
-
-        .beta-text {
-            font-size: 1.25rem;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: 3.8s;
-            text-align: left;
         }
 
         .klaviyo-form-section {
@@ -88,6 +82,7 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.5s;
             max-width: 400px;
+            width: 100%;
         }
 
         .club-section {
@@ -96,6 +91,7 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 4s;
             text-align: left;
+            max-width: 400px;
         }
 
         .club-title {
@@ -107,6 +103,17 @@
         .club-description {
             font-size: 1.25rem;
             color: #666;
+        }
+
+        .beta-text {
+            font-size: 1.25rem;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: 3.8s;
+            text-align: left;
+            max-width: 400px;
+            margin-top: 0.5rem;
         }
 
         @keyframes fadeIn {
@@ -137,7 +144,7 @@
             }
 
             .main-title {
-                font-size: 1.8rem;
+                font-size: 1.26rem;
             }
 
             .subtitle {
@@ -145,7 +152,7 @@
             }
 
             .phone-image {
-                width: 188px;
+                width: 160px;
             }
         }
     </style>
@@ -166,12 +173,11 @@
         <div class="klaviyo-form-section">
             <div class="klaviyo-form-SbT2qD"></div>
         </div>
-
-        <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
         
         <div class="club-section">
             <h2 class="club-title">The 1,000 club</h2>
             <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
+            <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
         </div>
     </div>
 
@@ -186,11 +192,9 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    // Vary the typing speed slightly for more natural effect
-                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
+                    const randomDelay = Math.random() * 20 + 30;
                     setTimeout(addCharacter, randomDelay);
                 } else {
-                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
@@ -199,7 +203,6 @@
             addCharacter();
         }
 
-        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
