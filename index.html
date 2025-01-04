@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Head and meta tags stay the same -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XjK9Zj'></script>
     <style>
-        /* All your original styles stay exactly the same */
         * {
             margin: 0;
             padding: 0;
@@ -38,13 +36,13 @@
 
         .heading {
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .main-title {
             font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
             min-height: 3em;
             text-align: left;
             color: #223c36;
@@ -60,7 +58,7 @@
             animation-delay: 3.2s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .phone-section {
@@ -70,7 +68,7 @@
         }
 
         .phone-image {
-            width: 146px;
+            width: 146px;  /* Reduced by 10% from 162px */
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -88,7 +86,7 @@
             color: #666;
             margin-bottom: 1rem;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .klaviyo-form-section {
@@ -107,7 +105,7 @@
             animation-delay: 4s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;
+            padding: 0 4px;  /* Increased from 3px */
         }
 
         .club-title {
@@ -143,11 +141,6 @@
             animation: blink 1s infinite;
         }
 
-        /* Make left-content invisible on mobile */
-        .left-content {
-            display: contents;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -162,7 +155,7 @@
             }
 
             .phone-image {
-                width: 144px;
+                width: 144px;  /* Adjusted for mobile */
             }
         }
 
@@ -176,7 +169,6 @@
             }
 
             .left-content {
-                display: block;  /* Make wrapper visible on desktop */
                 flex: 1;
                 max-width: 600px;
                 order: 1;
@@ -235,7 +227,7 @@
             <div class="heading">
                 <h1 class="main-title" id="mainTitle"></h1>
             </div>
-            
+
             <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
             
             <div class="klaviyo-form-section">
@@ -265,9 +257,11 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    const randomDelay = Math.random() * 20 + 30;
+                    // Vary the typing speed slightly for more natural effect
+                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
                     setTimeout(addCharacter, randomDelay);
                 } else {
+                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
