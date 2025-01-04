@@ -31,15 +31,16 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 1.5rem;  /* Reduced from 2rem to bring elements closer */
+            gap: 1.5rem;
         }
 
         .heading {
-            max-width: 600px;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .main-title {
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             min-height: 3em;
@@ -50,12 +51,14 @@
         .subtitle {
             font-size: 1.1rem;
             color: #666;
-            margin-bottom: 0;  /* Removed margin to reduce gap */
+            margin-bottom: 0;
             opacity: 0;
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.2s;
             text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .phone-section {
@@ -81,6 +84,7 @@
             animation-delay: 3.8s;
             text-align: left;
             color: #666;
+            margin-bottom: 1rem; /* Added space before "As a member" */
         }
 
         .klaviyo-form-section {
@@ -89,7 +93,7 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.5s;
             max-width: 400px;
-            margin-top: 0.5rem;  /* Small top margin instead of container gap */
+            margin: 0.25rem auto 0; /* Reduced top margin */
         }
 
         .club-section {
@@ -98,6 +102,8 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 4s;
             text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .club-title {
@@ -139,7 +145,7 @@
             }
 
             .main-title {
-                font-size: 1.5rem;
+                font-size: 1.55rem;
             }
 
             .subtitle {
