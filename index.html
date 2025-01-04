@@ -31,18 +31,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             gap: 1.2rem;
         }
 
         .heading {
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .main-title {
             font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
+            margin-bottom: 0.65rem;
             min-height: 3em;
             text-align: left;
             color: #223c36;
@@ -58,7 +59,7 @@
             animation-delay: 3.2s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .phone-section {
@@ -68,7 +69,7 @@
         }
 
         .phone-image {
-            width: 146px;  /* Reduced by 10% from 162px */
+            width: 146px;
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -86,7 +87,7 @@
             color: #666;
             margin-bottom: 1rem;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .klaviyo-form-section {
@@ -105,7 +106,7 @@
             animation-delay: 4s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .club-title {
@@ -141,6 +142,18 @@
             animation: blink 1s infinite;
         }
 
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .phone-image {
+                width: 180px;
+            }
+        }
+
+        /* Mobile styles - keeping exactly as original */
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -155,7 +168,7 @@
             }
 
             .phone-image {
-                width: 144px;  /* Adjusted for mobile */
+                width: 144px;
             }
         }
     </style>
@@ -195,11 +208,9 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    // Vary the typing speed slightly for more natural effect
-                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
+                    const randomDelay = Math.random() * 20 + 30;
                     setTimeout(addCharacter, randomDelay);
                 } else {
-                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
@@ -208,7 +219,6 @@
             addCharacter();
         }
 
-        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
