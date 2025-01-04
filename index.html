@@ -24,32 +24,43 @@
         }
 
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
             gap: 1.2rem;
         }
 
+        .content-wrapper {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .heading {
-            max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            width: 100%;
+            max-width: 600px;
+            padding: 0 4px;
         }
 
         .main-title {
-            font-size: 1.55rem;
+            font-size: clamp(1.55rem, 4vw, 2.5rem);
             font-weight: 700;
-            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
+            margin-bottom: 0.65rem;
             min-height: 3em;
             text-align: left;
             color: #223c36;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             color: #666;
             margin-bottom: 0;
             opacity: 0;
@@ -57,18 +68,20 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.2s;
             text-align: left;
-            max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            width: 100%;
+            max-width: 600px;
+            padding: 0 4px;
         }
 
         .phone-section {
             display: flex;
             justify-content: center;
             margin: 0.2rem 0;
+            width: 100%;
         }
 
         .phone-image {
-            width: 146px;  /* Reduced by 10% from 162px */
+            width: clamp(146px, 20vw, 200px);
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -77,7 +90,7 @@
         }
 
         .beta-text {
-            font-size: 1.25rem;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
             opacity: 0;
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
@@ -85,8 +98,9 @@
             text-align: left;
             color: #666;
             margin-bottom: 1rem;
-            max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            width: 100%;
+            max-width: 600px;
+            padding: 0 4px;
         }
 
         .klaviyo-form-section {
@@ -94,7 +108,8 @@
             transform: translateY(7px);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.5s;
-            max-width: 400px;
+            width: 100%;
+            max-width: 600px;
             margin-top: 0.1rem;
         }
 
@@ -104,18 +119,19 @@
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 4s;
             text-align: left;
-            max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            width: 100%;
+            max-width: 600px;
+            padding: 0 4px;
         }
 
         .club-title {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             margin-bottom: 0.7rem;
             color: #223c36;
         }
 
         .club-description {
-            font-size: 1.25rem;
+            font-size: clamp(1.25rem, 3vw, 1.4rem);
             color: #666;
         }
 
@@ -145,42 +161,39 @@
             .container {
                 padding: 2rem 1rem;
             }
-
-            .main-title {
-                font-size: 1.55rem;
+            
+            .content-wrapper {
+                max-width: 400px;
             }
 
-            .subtitle {
-                font-size: 1.25rem;
-            }
-
-            .phone-image {
-                width: 144px;  /* Adjusted for mobile */
+            .heading, .subtitle, .beta-text, .klaviyo-form-section, .club-section {
+                max-width: 400px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="heading">
-            <h1 class="main-title" id="mainTitle"></h1>
-        </div>
-        
-        <div class="phone-section">
-            <img src="images/BHPhoneView.png" alt="BadHealth App Interface" class="phone-image">
-        </div>
+        <div class="content-wrapper">
+            <div class="heading">
+                <h1 class="main-title" id="mainTitle"></h1>
+            </div>
+            
+            <div class="phone-section">
+                <img src="images/BHPhoneView.png" alt="BadHealth App Interface" class="phone-image">
+            </div>
 
-        <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
-        
-        <!-- Klaviyo form section -->
-        <div class="klaviyo-form-section">
-            <div class="klaviyo-form-SbT2qD"></div>
-        </div>
-        
-        <div class="club-section">
-            <h2 class="club-title">The 1,000 club</h2>
-            <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
-            <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
+            <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
+            
+            <div class="klaviyo-form-section">
+                <div class="klaviyo-form-SbT2qD"></div>
+            </div>
+            
+            <div class="club-section">
+                <h2 class="club-title">The 1,000 club</h2>
+                <p class="beta-text">We're only accepting 1000 beta users this year to get completely free access.</p>
+                <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
+            </div>
         </div>
     </div>
 
@@ -195,11 +208,9 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    // Vary the typing speed slightly for more natural effect
-                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
+                    const randomDelay = Math.random() * 20 + 30;
                     setTimeout(addCharacter, randomDelay);
                 } else {
-                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
@@ -208,7 +219,6 @@
             addCharacter();
         }
 
-        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
