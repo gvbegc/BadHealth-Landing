@@ -36,13 +36,13 @@
 
         .heading {
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .main-title {
             font-size: 1.55rem;
             font-weight: 700;
-            margin-bottom: 0.65rem; /* Reduced from 1.5rem */
+            margin-bottom: 0.65rem;
             min-height: 3em;
             text-align: left;
             color: #223c36;
@@ -58,7 +58,7 @@
             animation-delay: 3.2s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .phone-section {
@@ -68,7 +68,7 @@
         }
 
         .phone-image {
-            width: 146px;  /* Reduced by 10% from 162px */
+            width: 146px;
             height: auto;
             opacity: 0;
             transform: translateY(10px);
@@ -86,7 +86,7 @@
             color: #666;
             margin-bottom: 1rem;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .klaviyo-form-section {
@@ -94,6 +94,7 @@
             transform: translateY(10px);
             animation: fadeIn 0.5s ease forwards;
             animation-delay: 3.5s;
+            width: 100%;
             max-width: 400px;
             margin-top: 0.1rem;
         }
@@ -105,7 +106,7 @@
             animation-delay: 4s;
             text-align: left;
             max-width: 400px;
-            padding: 0 4px;  /* Increased from 3px */
+            padding: 0 4px;
         }
 
         .club-title {
@@ -155,14 +156,17 @@
             }
 
             .phone-image {
-                width: 144px;  /* Adjusted for mobile */
+                width: 144px;
             }
         }
 
-        /* Only adding this one rule for desktop */
         @media (min-width: 769px) {
             .container {
                 align-items: center;
+            }
+            
+            .klaviyo-form-section {
+                max-width: 600px;
             }
         }
     </style>
@@ -179,7 +183,6 @@
 
         <p class="subtitle">Reserve your spot for the smartest kitchen companion ever built.</p>
         
-        <!-- Klaviyo form section -->
         <div class="klaviyo-form-section">
             <div class="klaviyo-form-SbT2qD"></div>
         </div>
@@ -202,11 +205,9 @@
                     element.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
                     index++;
                     
-                    // Vary the typing speed slightly for more natural effect
-                    const randomDelay = Math.random() * 20 + 30; // 30-50ms
+                    const randomDelay = Math.random() * 20 + 30;
                     setTimeout(addCharacter, randomDelay);
                 } else {
-                    // Remove cursor when done
                     element.innerHTML = text;
                     if (callback) callback();
                 }
@@ -215,7 +216,6 @@
             addCharacter();
         }
 
-        // Start the animation when the page loads
         window.addEventListener('load', () => {
             const mainTitle = document.getElementById('mainTitle');
             typeText('Stop staring at your fridge and ordering takeout.', mainTitle);
