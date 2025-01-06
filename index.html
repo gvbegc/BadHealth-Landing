@@ -27,7 +27,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
-            min-height: 100vh;
+            min-height: calc(100vh - 4rem);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -120,6 +120,26 @@
             color: #666;
         }
 
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            font-size: 1rem;
+            font-family: 'EB Garamond', serif;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #223c36;
+            text-decoration: underline;
+        }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -193,6 +213,10 @@
             <p class="club-description">As a member, you'll have exclusive first access to every new feature we ever release.</p>
         </div>
     </div>
+
+    <footer class="footer">
+        <a href="/privacy-policy.html">Privacy Policy</a>
+    </footer>
 
     <script>
         function typeText(text, element, callback) {
